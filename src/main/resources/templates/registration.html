@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+    <form method="POST" action="/registration">
+        <h2>Registration</h2>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username"><br>
+
+        <label for="password">Password</label>
+        <input type="text" id="password" name="password"><br>
+
+        <label for="firstname">First name</label>
+        <input type="text" id="firstname" name="firstname"><br>
+
+        <label for="lastname">Last name</label>
+        <input type="text" id="lastname" name="lastname"><br>
+
+        <label for="birthDate">Birthdate</label>
+        <input type="date" id="birthDate" name="birthDate"><br>
+
+        <select name="role">
+            <option disabled selected>Choose role</option>
+            <option value="USER">USER</option>
+            <option value="ADMIN">ADMIN</option>
+        </select>
+
+        <p>
+            <button type="submit">Register</button>
+        </p>
+    </form>
+</body>
+</html>
