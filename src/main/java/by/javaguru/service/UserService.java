@@ -30,7 +30,8 @@ public class UserService {
     }
 
     public UserReadDto update(UserCreateEditDto userDto) {
-        return null;
+        User savedUser = userRepository.save(userMapper.toModel(userDto));
+        return userMapper.toDto(savedUser);
     }
 
     public void delete(Long id) {
