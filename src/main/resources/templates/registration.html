@@ -1,33 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
 </head>
 <body>
-    <form method="POST" action="/registration">
+    <form method="POST" action="/registration" th:object="${userCreateEditDto}">
         <h2>Registration</h2>
 
         <label for="username">Username</label>
-        <input type="text" id="username" name="username"><br>
+        <input type="text" id="username" name="username" th:field="*{username}"><br>
+        <div style="color: red" th:errors="*{username}"></div>
 
         <label for="password">Password</label>
-        <input type="text" id="password" name="password"><br>
+        <input type="text" id="password" name="password" th:field="*{password}"><br>
+        <div style="color: red" th:errors="*{username}"></div>
 
         <label for="firstname">First name</label>
-        <input type="text" id="firstname" name="firstname"><br>
+        <input type="text" id="firstname" name="firstname" th:field="*{firstname}"><br>
+        <div style="color: red" th:errors="*{firstname}"></div>
 
         <label for="lastname">Last name</label>
-        <input type="text" id="lastname" name="lastname"><br>
+        <input type="text" id="lastname" name="lastname" th:field="*{lastname}"><br>
+        <div style="color: red" th:errors="*{lastname}"></div>
 
         <label for="birthDate">Birthdate</label>
-        <input type="date" id="birthDate" name="birthDate"><br>
+        <input type="date" id="birthDate" name="birthDate" th:field="*{birthDate}"><br>
+        <div style="color: red" th:errors="*{birthDate}"></div>
 
         <select name="role">
             <option disabled selected>Choose role</option>
             <option value="USER">USER</option>
             <option value="ADMIN">ADMIN</option>
         </select>
+        <div style="color: red" th:errors="*{role}"></div>
 
         <p>
             <button type="submit">Register</button>
